@@ -48,5 +48,4 @@ Người dùng thường có xu hướng đặt mật khẩu đơn giản, dễ 
         xxxxxxxxxxxxx             | yếu
 
         ----------------------------------------
-
-* Tổng kết: 1 Mạnh, 1 Yếu.
+         Tổng kết: 1 Mạnh, 1 Yếu.
