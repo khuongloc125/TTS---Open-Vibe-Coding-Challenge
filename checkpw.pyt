@@ -31,10 +31,10 @@ def check_password_strength(file_path):
 
         for pwd in passwords:
             if re.match(pattern, pwd):
-                print(f"{pwd:<25} |Mạnh")
+                print(f"{pwd:<25} | Mạnh")
                 valid_count += 1
             else:
-                print(f"{pwd:<25} |Yếu")
+                print(f"{pwd:<25} | Yếu")
                 weak_count += 1
 
         # Thống kê cuối cùng
