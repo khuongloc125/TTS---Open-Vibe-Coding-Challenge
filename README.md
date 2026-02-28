@@ -23,7 +23,7 @@ Người dùng thường có xu hướng đặt mật khẩu đơn giản, dễ 
 
 * Mở Terminal (hoặc CMD/PowerShell)
 
-    git clone https://github.com/khuongloc125/TTS---Open-Vibe-Coding-Challenge.git
+        git clone https://github.com/khuongloc125/TTS---Open-Vibe-Coding-Challenge.git
 
 **2. Cấu trúc file đầu vào**
 
