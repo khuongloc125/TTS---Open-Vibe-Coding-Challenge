@@ -3,6 +3,46 @@
 ## Đề bài: Một script tự động kiểm tra xem độ mạnh của các mật khẩu trong một file text nhập vào có đạt chuẩn hay không.
 ---
 
+
+## Hướng dẫn cài đặt và sử dụng
+
+**1. Chuẩn bị môi trường**
+
+* Đảm bảo máy đã cài đặt Python 3.x.
+
+* Clone repository này về máy.
+
+* Mở Terminal (hoặc CMD/PowerShell)
+
+        git clone https://github.com/khuongloc125/TTS---Open-Vibe-Coding-Challenge.git
+
+**2. Dữ liệu đầu vào**
+
+* Có thể sửa nội dung file passwords.txt hoặc để nguyên và chạy luôn.
+
+**3. Cách chạy dự án**
+
+* Mở Terminal (hoặc CMD/PowerShell) tại thư mục dự án và chạy lệnh:
+
+    python checkpw.py
+
+**4. Kết quả kỳ vọng**
+
+* Chương trình sẽ hiển thị bảng thống kê trực quan ngay trên màn hình:
+
+        Mật khẩu                  | Độ dài | Trạng thái
+
+        ------------------------------------------------
+
+        xxxxxxxxxxxxx             | x      | Mạnh
+
+        xxxxxxxxxxxxx             | x      | yếu
+
+        ------------------------------------------------
+         Tổng kết: 1 Mạnh, 1 Yếu.
+
+---
+
 ## TÀI LIỆU KIẾN TRÚC DỰ ÁN
 
 **1. Vấn đề giải quyết**
@@ -40,9 +80,11 @@ Chương trình hoạt động theo một luồng tuyến tính (Linear Flow) đ
 
 * Core Logic (Regex): Áp dụng pattern: 
 
-                                    ^(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*(),.?":{}|<> ]).{8,}$
+                                    ^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*(),.?":{}|<> ]).{8,}$
 
                                     (?=.*[a-z]): Ít nhất một chữ thường.
+
+                                    (?=.*[A-Z]): Ít nhất một chữ in hoa.
 
                                     (?=.*[0-9]): Ít nhất một chữ số.
 
@@ -53,39 +95,15 @@ Chương trình hoạt động theo một luồng tuyến tính (Linear Flow) đ
 * Output: Hiển thị kết quả dưới dạng bảng ngay trên Console và in tổng kết số lượng mật khẩu Mạnh/Yếu.
 
 ---
-## Hướng dẫn cài đặt và sử dụng
 
-**1. Chuẩn bị môi trường**
+## Nhật ký "Vibe Coding"
 
-* Đảm bảo máy đã cài đặt Python 3.x.
+Link AI: 
 
-* Clone repository này về máy.
+        https://gemini.google.com/share/6b87545e6752
 
-* Mở Terminal (hoặc CMD/PowerShell)
+---
+## Video Demo
+Link video:
 
-        git clone https://github.com/khuongloc125/TTS---Open-Vibe-Coding-Challenge.git
-
-**2. Dữ liệu đầu vào**
-
-* Có thể sửa nội dung file passwords.txt hoặc để nguyên và chạy luôn.
-
-**3. Cách chạy dự án**
-
-* Mở Terminal (hoặc CMD/PowerShell) tại thư mục dự án và chạy lệnh:
-
-    python checkpw.py
-
-**4. Kết quả kỳ vọng**
-
-* Chương trình sẽ hiển thị bảng thống kê trực quan ngay trên màn hình:
-
-        Mật khẩu                  | Độ dài | Trạng thái
-
-        ------------------------------------------------
-
-        xxxxxxxxxxxxx             | x      | Mạnh
-
-        xxxxxxxxxxxxx             | x      | yếu
-
-        ------------------------------------------------
-         Tổng kết: 1 Mạnh, 1 Yếu.
+        https://drive.google.com/file/d/1PR11xeiPzVxuSBePmrz62g_aVn8iYwrr/view?usp=sharing
