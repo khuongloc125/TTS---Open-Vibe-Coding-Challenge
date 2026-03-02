@@ -3,9 +3,54 @@
 ## Đề bài: Một script tự động kiểm tra xem độ mạnh của các mật khẩu trong một file text nhập vào có đạt chuẩn hay không.
 ---
 
-## Vấn đề giải quyết
+## TÀI LIỆU KIẾN TRÚC DỰ ÁN
+
+**1. Vấn đề giải quyết**
     
-Người dùng thường có xu hướng đặt mật khẩu đơn giản, dễ nhớ nhưng lại dễ bị tấn công. Việc kiểm tra thủ công hàng trăm tài khoản là bất khả thi. Script này tự động hóa quy trình đó bằng các bộ lọc Regex chính xác qua đó tiếp cận và làm quen với Regex cho việc phân tích sau này.
+Trong môi trường an ninh mạng hiện nay, mật khẩu yếu là kẽ hở lớn nhất dẫn đến các cuộc tấn công Brute-force hoặc Dictionary Attack.
+
+* Thách thức: Người dùng có xu hướng đặt mật khẩu dễ nhớ nhưng không an toàn. Việc kiểm tra thủ công hàng trăm, hàng ngàn mật khẩu trong hệ thống quản trị là bất khả thi và tốn thời gian.
+
+* Mục tiêu: Xây dựng một công cụ tự động hóa việc rà soát và phân loại mật khẩu theo các tiêu chuẩn bảo mật hiện đại (độ dài, ký tự đặc biệt, số, chữ hoa/thường). Phục vụ cho việc mã hóa mật khẩu một cách an toàn, khó bị hacker tấn công.
+
+
+**2. Tech Stack & Công cụ sử dụng**
+
+* Ngôn ngữ Python 3.10+: Lựa chọn vì sự phổ biến, thư viện xử lý chuỗi mạnh mẽ và không cần cài đặt phức tạp (Zero-dependency).
+
+* Thư viện chuẩn re (Regex): Sử dụng biểu thức chính quy để đối soát mẫu nhanh chóng và chính xác. Đây là công cụ tối ưu nhất để xử lý các quy tắc logic phức tạp trong mật khẩu.
+
+* Thư viện chuẩn os: Dùng để kiểm tra sự tồn tại và trạng thái của file vật lý trước khi xử lý, đảm bảo tính bền vững (robustness) của script.
+
+* AI (Gemini): Đóng vai trò "Pair Programmer" để tối ưu hóa các chuỗi Regex khó và thiết kế giao diện bảng (table) trên terminal.
+
+* Note: Sử dụng thư viện re để hiểu cách thức hoạt động của Regex và tận dụng cho các quá trình phân tích log,... trong hoạt động bảo mật sau này.
+
+**3.Luồng hoạt động chính (Workflow)**
+
+Chương trình hoạt động theo một luồng tuyến tính (Linear Flow) để đảm bảo hiệu suất cao nhất:
+
+**Mô tả chi tiết flow:**
+
+* Input: Người dùng cung cấp đường dẫn file mật khẩu (mặc định là passwords.txt).
+
+* Validation: Script kiểm tra file có tồn tại không? Có rỗng (0 byte) không? Nếu lỗi, thông báo ngay cho người dùng.
+
+* Preprocessing: Đọc từng dòng, sử dụng phương thức .strip() để loại bỏ khoảng trắng dư thừa và loại bỏ các dòng trống.
+
+* Core Logic (Regex): Áp dụng pattern: 
+
+                                    ^(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*(),.?":{}|<> ]).{8,}$
+
+                                    (?=.*[a-z]): Ít nhất một chữ thường.
+
+                                    (?=.*[0-9]): Ít nhất một chữ số.
+
+                                    (?=.*[!@...]): Ít nhất một ký tự đặc biệt.
+
+                                    .{8,}: Độ dài tối thiểu 8 ký tự.
+
+* Output: Hiển thị kết quả dưới dạng bảng ngay trên Console và in tổng kết số lượng mật khẩu Mạnh/Yếu.
 
 ---
 ## Hướng dẫn cài đặt và sử dụng

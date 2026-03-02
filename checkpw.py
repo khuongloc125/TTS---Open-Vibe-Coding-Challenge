@@ -2,7 +2,7 @@ import re
 import os
 
 def check_password_strength(file_path):
-    pattern = r"^(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*(),.?\":{}|<> ]).{8,}$"
+    pattern = r"^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*(),.?\":{}|<> ]).{8,}$"
 
     if not os.path.exists(file_path):
         print(f"Lỗi: Không tìm thấy file '{file_path}'.")
