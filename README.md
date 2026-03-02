@@ -2,11 +2,6 @@
 
 ## Đề bài: Một script tự động kiểm tra xem độ mạnh của các mật khẩu trong một file text nhập vào có đạt chuẩn hay không.
 ---
-## Password Analyzer CLI (Prototype)
-
-Dự án cung cấp một công cụ kiểm tra độ mạnh mật khẩu hàng loạt từ file văn bản. Công cụ này được thiết kế để giúp các quản trị viên hệ thống nhanh chóng rà soát các mật khẩu yếu dựa trên các tiêu chuẩn bảo mật hiện đại.
-
----
 
 ## Vấn đề giải quyết
     
@@ -25,7 +20,7 @@ Người dùng thường có xu hướng đặt mật khẩu đơn giản, dễ 
 
         git clone https://github.com/khuongloc125/TTS---Open-Vibe-Coding-Challenge.git
 
-**2. Cấu trúc file đầu vào**
+**2. Dữ liệu đầu vào**
 
 * Có thể sửa nội dung file passwords.txt hoặc để nguyên và chạy luôn.
 
@@ -33,19 +28,19 @@ Người dùng thường có xu hướng đặt mật khẩu đơn giản, dễ 
 
 * Mở Terminal (hoặc CMD/PowerShell) tại thư mục dự án và chạy lệnh:
 
-    python checkpw.pyt
+    python checkpw.py
 
 **4. Kết quả kỳ vọng**
 
 * Chương trình sẽ hiển thị bảng thống kê trực quan ngay trên màn hình:
 
-        Mật khẩu                  | Trạng thái
+        Mật khẩu                  | Độ dài | Trạng thái
 
-        ----------------------------------------
+        ------------------------------------------------
 
-        xxxxxxxxxxxxx             | Mạnh
+        xxxxxxxxxxxxx             | x      | Mạnh
 
-        xxxxxxxxxxxxx             | yếu
+        xxxxxxxxxxxxx             | x      | yếu
 
-        ----------------------------------------
+        ------------------------------------------------
          Tổng kết: 1 Mạnh, 1 Yếu.
